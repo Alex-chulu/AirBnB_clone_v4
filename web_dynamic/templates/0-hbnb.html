@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HBNB</title>
+    <link href="{{ url_for('static', filename='styles/normalize.css', _external=True) }}?v={{ cache_id }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/main.css', _external=True) }}?v={{ cache_id }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/other.css', _external=True) }}?v={{ cache_id }}" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Welcome to HBNB!</h1>
+    <p>This is a sample HTML file served by Flask.</p>
+  </body>
+</html>

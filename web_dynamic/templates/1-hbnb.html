@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HBNB</title>
+    <link href="{{ url_for('static', filename='styles/normalize.css', _external=True) }}?v={{ cache_id }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/main.css', _external=True) }}?v={{ cache_id }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/other.css', _external=True) }}?v={{ cache_id }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/1-hbnb.js', _external=True) }}?v={{ cache_id }}"></script>
+  </head>
+  <body>
+    <h1>Welcome to HBNB!</h1>
+    <ul class="amenities">
+      <li data-id="1" data-name="Wifi"><input type="checkbox">Wifi</li>
+      <li data-id="2" data-name="Pool"><input type="checkbox">Pool</li>
+      <li data-id="3" data-name="Kitchen"><input type="checkbox">Kitchen</li>
+      <!-- Add more amenities here -->
+    </ul>
+    <div class="Amenities">
+      <h4>None</h4>
+    </div>
+  </body>
+</html>
+

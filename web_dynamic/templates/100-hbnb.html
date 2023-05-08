@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} HBNB - Search {% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/4-bnb.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="filters">
+          <h1>Places</h1>
+          <hr>
+          <div class="locations">
+            <h2>States</h2>
+            <ul class="nav nav-pills">
+              {% for state in states %}
+              <li>
+                <input type="checkbox" data-id="{{ state.id }}" data-name="{{ state.name }}">
+                {{ state.name }}
+              </li>
+              {% endfor %}
+            </ul>
+            <h2>Cities</h2>
+            <ul class="nav nav-pills">
+              {% for city in cities %}
+              <li>
+                <input type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}">
+                {{ city.name }}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="amenities">
+            <h2>Amenities</h2>
+            <div class="amenities">
+              <input type="checkbox" class="amenity-checkbox" data-id="allAmenities" data-name="All Amenities">All Amenities
+              {% for amenity in amenities %}
+              <div class="amenity">
+                <input type="checkbox" class="amenity-checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+                <span>{{ amenity.name }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <button class="btn btn-primary" id="filter-btn">Search</button>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="places">
+          <h1>Places to stay</h1>
+          <hr>
+          <section class="places-list">
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="{{ url_for('static', filename='scripts/100-hbnb.js') }}"></script>
+{% endblock %}
+
